@@ -81,12 +81,18 @@ export default function Home() {
 
       <section className="relative min-h-[90vh] overflow-hidden">
 
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-all duration-500"
-          style={{
-            backgroundImage: `url(${images[currentImage]})`,
-          }}
-        ></div>
+        {images.map((image, index) => (
+
+          <div
+            key={index}
+            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${index === currentImage ? "opacity-100" : "opacity-0"
+              }`}
+            style={{
+              backgroundImage: `url(${image})`,
+            }}
+          ></div>
+
+        ))}
 
         <div className="absolute inset-0 bg-black/60"></div>
 
