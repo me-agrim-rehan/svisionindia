@@ -177,45 +177,16 @@ export default function About() {
               <div className="p-8 flex-1">
 
                 <h3 className="text-3xl font-bold text-[#222831] mb-3">
-                  XYZ
+                 Mr. Sandeep Singh
                 </h3>
 
                 <p className="text-[#C38154] text-xl mb-4 font-semibold">
-                  Owner
+                  Co-Founder/CEO
                 </p>
 
                 <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                   Leading the organization with a vision focused on trust,
                   operational excellence, and long-term client partnerships.
-                </p>
-
-              </div>
-
-            </div>
-
-            {/* CEO */}
-
-            <div className="bg-white rounded-2xl overflow-hidden shadow-2xl border border-[#DCD7C9] flex flex-col md:flex-row items-center hover:scale-[1.01] transition duration-300">
-
-              <img
-                src={ceo}
-                alt="CEO"
-                className="w-full md:w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 transition duration-500"
-              />
-
-              <div className="p-8 flex-1">
-
-                <h3 className="text-3xl font-bold text-[#222831] mb-3">
-                  PQR
-                </h3>
-
-                <p className="text-[#C38154] text-xl mb-4 font-semibold">
-                  Chief Executive Officer
-                </p>
-
-                <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                  Overseeing strategic operations, client relations, and
-                  organizational growth with a commitment to service quality.
                 </p>
 
               </div>
@@ -235,7 +206,7 @@ export default function About() {
               <div className="p-8 flex-1">
 
                 <h3 className="text-3xl font-bold text-[#222831] mb-3">
-                  Mukesh Kumar
+                  Mr. Mukesh Kumar
                 </h3>
 
                 <p className="text-[#C38154] text-xl mb-4 font-semibold">
@@ -243,13 +214,68 @@ export default function About() {
                 </p>
 
                 <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                  Managing technology operations, infrastructure systems, and
-                  modern operational practices that strengthen service delivery.
+                  Oversees technology infrastructure, facility management solutions, and operational support services with a focus on innovation and reliability. 
                 </p>
 
               </div>
 
             </div>
+
+        {/* Security Director */}
+
+            <div className="bg-white rounded-2xl overflow-hidden shadow-2xl border border-[#DCD7C9] flex flex-col md:flex-row items-center hover:scale-[1.01] transition duration-300">
+
+              <img
+                src={ceo}
+                alt="CEO"
+                className="w-full md:w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 transition duration-500"
+              />
+
+              <div className="p-8 flex-1">
+
+                <h3 className="text-3xl font-bold text-[#222831] mb-3">
+                  Mr. Surender Gahlawat
+                </h3>
+
+                <p className="text-[#C38154] text-xl mb-4 font-semibold">
+                  Chief security Officer
+                </p>
+
+                <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+                  Handles security operations, workforce management, and client service delivery with a focus on reliability and professionalism.
+                </p>
+
+              </div>
+
+            </div>
+
+          {/* Security Director */}
+
+      <div className="bg-white rounded-2xl overflow-hidden shadow-2xl border border-[#DCD7C9] flex flex-col md:flex-row items-center hover:scale-[1.01] transition duration-300">
+
+        <img
+            src={ceo}
+            alt="CEO"
+            className="w-full md:w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 transition duration-500"
+          />
+
+          <div className="p-8 flex-1">
+
+            <h3 className="text-3xl font-bold text-[#222831] mb-3">
+              Mr. Sunny Mehlawat
+            </h3>
+
+            <p className="text-[#C38154] text-xl mb-4 font-semibold">
+              Chief Finance Officer
+            </p>
+
+            <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+              Handles financial operations, budgeting, and client service delivery with a focus on reliability and professionalism.
+            </p>
+
+          </div>
+
+        </div>
 
           </div>
 
