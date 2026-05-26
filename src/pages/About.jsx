@@ -1,6 +1,7 @@
 import owner from "../assets/owner.jpg";
 import ceo from "../assets/ceo.jpg";
 import cto from "../assets/cto.jpg";
+import cfo from "../assets/cfo.jpg";
 import client1 from "../assets/client1.png";
 import client2 from "../assets/client2.png";
 import client3 from "../assets/client3.png";
@@ -226,8 +227,8 @@ export default function About() {
             <div className="bg-white rounded-2xl overflow-hidden shadow-2xl border border-[#DCD7C9] flex flex-col md:flex-row items-center hover:scale-[1.01] transition duration-300">
 
               <img
-                src={ceo}
-                alt="CEO"
+                src={cfo}
+                alt="Cso"
                 className="w-full md:w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 transition duration-500"
               />
 
