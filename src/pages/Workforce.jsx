@@ -1,5 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
+
+import Reveal from "../components/Reveal";
+import { fadeUp, staggerContainer } from "../utils/animations";
 
 export default function Workforce() {
 
@@ -16,7 +20,11 @@ export default function Workforce() {
 
     return (
 
-        <div className="bg-[#f8f4ee] overflow-hidden">
+        <div className="bg-[#f8f4ee] overflow-hidden relative">
+
+            {/* NOISE TEXTURE */}
+
+            <div className="fixed inset-0 pointer-events-none opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/noise.png')]"></div>
 
             {/* HERO SECTION */}
 
@@ -32,7 +40,11 @@ export default function Workforce() {
 
                     {/* LEFT SIDE */}
 
-                    <div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
 
                         <p className="uppercase tracking-[5px] text-[#FFC26F] text-sm mb-5">
                             Workforce Solutions
@@ -57,21 +69,21 @@ export default function Workforce() {
 
                             <button
                                 onClick={() => navigate("/contact")}
-                                className="bg-[#C38154] hover:bg-[#d19167] text-white px-8 py-3 rounded-xl font-semibold transition duration-300 shadow-lg hover:shadow-[#C38154]/30"
+                                className="bg-[#C38154] hover:bg-[#d19167] text-white px-8 py-3 rounded-xl font-semibold transition duration-300 shadow-lg hover:shadow-[#C38154]/30 hover:-translate-y-1"
                             >
                                 Contact Us
                             </button>
 
                             <button
                                 onClick={() => navigate("/services")}
-                                className="border border-white/30 hover:bg-white hover:text-[#222831] px-8 py-3 rounded-xl font-semibold transition duration-300"
+                                className="border border-white/30 hover:bg-white hover:text-[#222831] px-8 py-3 rounded-xl font-semibold transition duration-300 hover:-translate-y-1"
                             >
                                 Explore Services
                             </button>
 
                         </div>
 
-                    </div>
+                    </motion.div>
 
                     {/* RIGHT SIDE */}
 
@@ -79,7 +91,12 @@ export default function Workforce() {
 
                         {/* CARD 1 */}
 
-                        <div className="absolute top-10 left-0 bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6 w-[240px] shadow-2xl hover:-translate-y-2 transition duration-500">
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2, duration: 0.7 }}
+                            className="absolute animate-[float_6s_ease-in-out_infinite] top-10 left-0 bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6 w-[240px] shadow-2xl transition-all duration-500 hover:-translate-y-4 hover:bg-white/15 hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
+                        >
 
                             <div className="w-14 h-14 rounded-2xl bg-[#FFC26F]/20 flex items-center justify-center mb-5 text-2xl">
                                 🛡️
@@ -93,11 +110,16 @@ export default function Workforce() {
                                 Trained professionals ensuring safety and reliability.
                             </p>
 
-                        </div>
+                        </motion.div>
 
                         {/* CARD 2 */}
 
-                        <div className="absolute top-52 right-0 bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6 w-[240px] shadow-2xl hover:-translate-y-2 transition duration-500">
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.4, duration: 0.7 }}
+                            className="absolute animate-[float_6s_ease-in-out_infinite] top-52 right-0 bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6 w-[240px] shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:bg-white/15 hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
+                        >
 
                             <div className="w-14 h-14 rounded-2xl bg-[#FFC26F]/20 flex items-center justify-center mb-5 text-2xl">
                                 🏢
@@ -111,11 +133,16 @@ export default function Workforce() {
                                 Smart infrastructure and operational support services.
                             </p>
 
-                        </div>
+                        </motion.div>
 
                         {/* CARD 3 */}
 
-                        <div className="absolute bottom-8 left-16 bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6 w-[240px] shadow-2xl hover:-translate-y-2 transition duration-500">
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.6, duration: 0.7 }}
+                            className="absolute animate-[float_6s_ease-in-out_infinite] bottom-8 left-16 bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6 w-[240px] shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:bg-white/15 hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
+                        >
 
                             <div className="w-14 h-14 rounded-2xl bg-[#FFC26F]/20 flex items-center justify-center mb-5 text-2xl">
                                 👷
@@ -129,7 +156,7 @@ export default function Workforce() {
                                 Experienced manpower tailored for every requirement.
                             </p>
 
-                        </div>
+                        </motion.div>
 
                     </div>
 
@@ -139,173 +166,241 @@ export default function Workforce() {
 
             {/* MANPOWER SERVICES */}
 
-            <section className="py-28 px-6 bg-[#f8f4ee]">
+            <Reveal>
+                <motion.section
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="py-28 px-6 bg-[#f8f4ee]"
+                >
 
-                <div className="max-w-7xl mx-auto">
+                    <div className="max-w-7xl mx-auto">
 
-                    <div className="text-center mb-20">
+                        <div className="text-center mb-20">
 
-                        <p className="uppercase tracking-[4px] text-[#C38154] text-sm mb-4">
-                            Manpower Services
-                        </p>
+                            <p className="uppercase tracking-[4px] text-[#C38154] text-sm mb-4">
+                                Manpower Services
+                            </p>
 
-                        <h2 className="text-4xl md:text-5xl font-bold text-[#222831] mb-6">
-                            Professional Workforce Solutions
-                        </h2>
+                            <h2 className="text-4xl md:text-5xl font-bold text-[#222831] mb-6">
+                                Professional Workforce Solutions
+                            </h2>
 
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                            Reliable manpower deployment services designed for
-                            residential societies, commercial properties,
-                            industries, and organizations.
-                        </p>
+                            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                                Reliable manpower deployment services designed for
+                                residential societies, commercial properties,
+                                industries, and organizations.
+                            </p>
+
+                        </div>
+
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+                            {[
+                                {
+                                    name: "Security Guard",
+                                    icon: "🛡️",
+                                },
+                                {
+                                    name: "Housekeeping",
+                                    icon: "🧹",
+                                },
+                                {
+                                    name: "Plumber",
+                                    icon: "🔧",
+                                },
+                                {
+                                    name: "Electrician",
+                                    icon: "⚡",
+                                },
+                                {
+                                    name: "Mason",
+                                    icon: "🧱",
+                                },
+                                {
+                                    name: "Carpenter",
+                                    icon: "🪚",
+                                },
+                                {
+                                    name: "Pest Control",
+                                    icon: "🐜",
+                                },
+                                {
+                                    name: "Painter",
+                                    icon: "🎨",
+                                },
+                                {
+                                    name: "And Many More",
+                                    icon: "➕",
+                                },
+                            ].map((service, index) => (
+
+                                <motion.div
+                                    variants={fadeUp}
+                                    key={index}
+                                    className="group bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-lg border border-[#f0e5d8] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)]"
+                                >
+
+                                    <div className="w-16 h-16 rounded-2xl bg-[#FFC26F]/20 flex items-center justify-center text-3xl mb-6 transition duration-500 group-hover:scale-110 group-hover:rotate-3">
+                                        {service.icon}
+                                    </div>
+
+                                    <h3 className="text-xl font-bold text-[#222831] mb-3">
+                                        {service.name}
+                                    </h3>
+
+                                </motion.div>
+
+                            ))}
+
+                        </div>
 
                     </div>
 
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-
-                        {[
-                            {
-                                name: "Security Guard",
-                                icon: "🛡️",
-                            },
-                            {
-                                name: "Housekeeping",
-                                icon: "🧹",
-                            },
-                            {
-                                name: "Plumber",
-                                icon: "🔧",
-                            },
-                            {
-                                name: "Electrician",
-                                icon: "⚡",
-                            },
-                            {
-                                name: "Mason",
-                                icon: "🧱",
-                            },
-                            {
-                                name: "Carpenter",
-                                icon: "🪚",
-                            },
-                            {
-                                name: "Pest Control",
-                                icon: "🐜",
-                            },
-                            {
-                                name: "Painter",
-                                icon: "🎨",
-                            },
-                            {
-                                name: "And Many More",
-                                icon: "➕",
-                            },
-                        ].map((service, index) => (
-
-                            <div
-                                key={index}
-                                className="bg-white rounded-3xl p-8 shadow-lg hover:-translate-y-2 transition duration-300 border border-[#f0e5d8]"
-                            >
-
-                                <div className="w-16 h-16 rounded-2xl bg-[#FFC26F]/20 flex items-center justify-center text-3xl mb-6">
-                                    {service.icon}
-                                </div>
-
-                                <h3 className="text-xl font-bold text-[#222831] mb-3">
-                                    {service.name}
-                                </h3>
-
-                            </div>
-
-                        ))}
-
-                    </div>
-
-                </div>
-
-            </section>
+                </motion.section>
+            </Reveal>
 
             {/* INFRASTRUCTURE SECTION */}
 
-            <section className="py-28 px-6 bg-[#222831]">
+            <Reveal>
+                <motion.section
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="relative py-28 px-6 bg-[#222831] overflow-hidden"
+                >
 
-                <div className="max-w-7xl mx-auto">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,194,111,0.10),transparent_50%)]"></div>
 
-                    <div className="text-center mb-20">
+                    <div className="max-w-7xl mx-auto relative z-10">
 
-                        <p className="uppercase tracking-[4px] text-[#FFC26F] text-sm mb-4">
-                            Infrastructure Management
-                        </p>
+                        <div className="text-center mb-20">
 
-                        <h2 className="text-4xl md:text-5xl font-bold text-[#F9E0BB] mb-6">
-                            Smart Infrastructure Services
-                        </h2>
+                            <p className="uppercase tracking-[4px] text-[#FFC26F] text-sm mb-4">
+                                Infrastructure Management
+                            </p>
 
-                        <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                            Modern infrastructure support and technical management
-                            solutions designed for operational efficiency and reliability.
-                        </p>
+                            <h2 className="text-4xl md:text-5xl font-bold text-[#F9E0BB] mb-6">
+                                Smart Infrastructure Services
+                            </h2>
 
+                            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                                Modern infrastructure support and technical management
+                                solutions designed for operational efficiency and reliability.
+                            </p>
+
+                        </div>
+
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+                            {[
+                                {
+                                    name: "CCTV Surveillance",
+                                    icon: "📹",
+                                },
+                                {
+                                    name: "IT Infra Services",
+                                    icon: "🖥️",
+                                },
+                                {
+                                    name: "Device Maintenance",
+                                    icon: "🛠️",
+                                },
+                                {
+                                    name: "Networking",
+                                    icon: "🌐",
+                                },
+                                {
+                                    name: "Repairing Services",
+                                    icon: "⚙️",
+                                },
+                                {
+                                    name: "Technical Support",
+                                    icon: "🎧",
+                                },
+                                {
+                                    name: "Installation Services",
+                                    icon: "📡",
+                                },
+                                {
+                                    name: "Many More Services",
+                                    icon: "✨",
+                                },
+                            ].map((service, index) => (
+
+                                <motion.div
+                                    variants={fadeUp}
+                                    key={index}
+                                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:-translate-y-2 transition duration-300"
+                                >
+
+                                    <div className="w-16 h-16 rounded-2xl bg-[#FFC26F]/15 flex items-center justify-center text-3xl mb-6">
+                                        {service.icon}
+                                    </div>
+
+                                    <h3 className="text-xl font-bold text-[#F9E0BB] mb-3">
+                                        {service.name}
+                                    </h3>
+
+                                </motion.div>
+
+                            ))}
+
+                        </div>
                     </div>
 
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                </motion.section>
+            </Reveal>
 
-                        {[
-                            {
-                                name: "CCTV Surveillance",
-                                icon: "📹",
-                            },
-                            {
-                                name: "IT Infra Services",
-                                icon: "🖥️",
-                            },
-                            {
-                                name: "Device Maintenance",
-                                icon: "🛠️",
-                            },
-                            {
-                                name: "Networking",
-                                icon: "🌐",
-                            },
-                            {
-                                name: "Repairing Services",
-                                icon: "⚙️",
-                            },
-                            {
-                                name: "Technical Support",
-                                icon: "🎧",
-                            },
-                            {
-                                name: "Installation Services",
-                                icon: "📡",
-                            },
-                            {
-                                name: "Many More Services",
-                                icon: "✨",
-                            },
-                        ].map((service, index) => (
+            {/* FINAL CTA */}
 
-                            <div
-                                key={index}
-                                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:-translate-y-2 transition duration-300"
+            <Reveal>
+                <motion.section
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="py-24 px-6 bg-[#f8f4ee]"
+                >
+
+                    <div className="max-w-5xl mx-auto bg-[#222831] rounded-[40px] p-12 md:p-16 text-center relative overflow-hidden shadow-2xl">
+
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,194,111,0.12),transparent_45%)]"></div>
+
+                        <div className="relative z-10">
+
+                            <p className="uppercase tracking-[5px] text-[#FFC26F] text-sm mb-4">
+                                Workforce Support
+                            </p>
+
+                            <h2 className="text-4xl md:text-5xl font-bold text-[#F9E0BB] leading-tight mb-6">
+
+                                Looking For Reliable Workforce Solutions?
+
+                            </h2>
+
+                            <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed mb-10">
+
+                                Connect with our team for professional manpower,
+                                facility management, and infrastructure support services.
+
+                            </p>
+
+                            <button
+                                onClick={() => navigate("/contact")}
+                                className="bg-[#C38154] hover:bg-[#d19167] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 shadow-lg"
                             >
+                                Contact Our Team
+                            </button>
 
-                                <div className="w-16 h-16 rounded-2xl bg-[#FFC26F]/15 flex items-center justify-center text-3xl mb-6">
-                                    {service.icon}
-                                </div>
-
-                                <h3 className="text-xl font-bold text-[#F9E0BB] mb-3">
-                                    {service.name}
-                                </h3>
-
-                            </div>
-
-                        ))}
+                        </div>
 
                     </div>
-                </div>
 
-            </section>
+                </motion.section>
+            </Reveal>
 
         </div>
     );

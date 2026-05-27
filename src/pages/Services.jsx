@@ -1,4 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { fadeUp, staggerContainer } from "../utils/animations";
+import Reveal from "../components/Reveal";
 
 export default function Services() {
 
@@ -6,15 +9,32 @@ export default function Services() {
 
   return (
 
-    <div className="bg-[#f5f5f5] min-h-screen">
+    <div className="bg-[#f5f5f5] min-h-screen relative overflow-hidden">
+
+      {/* NOISE TEXTURE */}
+
+      <div className="fixed inset-0 pointer-events-none opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/noise.png')]"></div>
 
       {/* HERO SECTION */}
 
-      <section className="bg-[#222831] text-white py-24 px-6 text-center">
+      <section className="relative overflow-hidden bg-[#222831] text-white py-32 px-6 text-center">
 
-        <div className="max-w-5xl mx-auto">
+        {/* GLOW EFFECTS */}
 
-          <h1 className="text-5xl md:text-6xl font-bold mb-8 text-[#F9E0BB]">
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#FFC26F]/10 blur-[120px] rounded-full"></div>
+
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#C38154]/10 blur-[120px] rounded-full"></div>
+
+        {/* HERO CONTENT */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-5xl mx-auto relative z-10"
+        >
+
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 text-[#F9E0BB] leading-tight">
 
             Our Services
 
@@ -29,91 +49,133 @@ export default function Services() {
 
           </p>
 
-        </div>
+        </motion.div>
 
       </section>
 
-      {/* SERVICES CARDS */}
+      {/* SERVICES SECTION */}
 
-      <section className="py-24 px-6">
+      <Reveal>
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+        <motion.section
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="py-28 px-6 relative"
+        >
 
-          {/* WORKFORCE CARD */}
+          {/* BACKGROUND GLOW */}
 
-          <div className="bg-white rounded-3xl p-10 shadow-xl hover:-translate-y-2 transition-all duration-300">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(195,129,84,0.08),transparent_60%)] pointer-events-none"></div>
 
-            <div className="mb-8">
+          {/* SECTION HEADER */}
 
-              <span className="text-sm uppercase tracking-[4px] text-[#C38154] font-semibold">
-                Workforce Division
-              </span>
+          <div className="text-center mb-16 relative z-10">
 
-            </div>
-
-            <h2 className="text-3xl md:text-4xl font-bold text-[#222831] mb-6 leading-tight">
-
-              Workforce & Facility Services
-
-            </h2>
-
-            <p className="text-gray-700 text-lg leading-relaxed mb-10">
-
-              Professional manpower deployment and facility management services
-              including security personnel, housekeeping staff, maintenance support,
-              operational workforce solutions, and infrastructure assistance tailored
-              for modern organizations and communities.
-
+            <p className="uppercase tracking-[5px] text-[#C38154] text-sm mb-4">
+              Professional Solutions
             </p>
 
-            <button
-              onClick={() => navigate("../services/workforce")}
-              className="bg-[#C38154] hover:bg-[#d19167] text-white px-7 py-3 rounded-xl font-semibold transition duration-300 shadow-lg hover:shadow-[0_8px_30px_rgba(195,129,84,0.35)]"
-            >
-              Explore Workforce Services
-            </button>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#222831] mb-6">
+              Services Designed For Modern Operations
+            </h2>
+
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Reliable workforce deployment and property leasing services
+              tailored for organizations, industries, residential societies,
+              and infrastructure projects.
+            </p>
 
           </div>
 
-          {/* REAL ESTATE CARD */}
+          {/* SERVICE CARDS */}
 
-          <div className="bg-white rounded-3xl p-10 shadow-xl hover:-translate-y-2 transition-all duration-300">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 relative z-10">
 
-            <div className="mb-8">
+            {/* WORKFORCE CARD */}
 
-              <span className="text-sm uppercase tracking-[4px] text-[#C38154] font-semibold">
-                Real Estate Division
-              </span>
-
-            </div>
-
-            <h2 className="text-3xl md:text-4xl font-bold text-[#222831] mb-6 leading-tight">
-
-              Real Estate Services
-
-            </h2>
-
-            <p className="text-gray-700 text-lg leading-relaxed mb-10">
-
-              Reliable property support and real estate solutions including
-              consultation, operational assistance, infrastructure coordination,
-              property-related services, and long-term support for residential
-              and commercial projects.
-
-            </p>
-
-            <button
-              onClick={() => navigate("/services/realestate")}
-              className="bg-[#C38154] hover:bg-[#d19167] text-white px-7 py-3 rounded-xl font-semibold transition duration-300 shadow-lg hover:shadow-[0_8px_30px_rgba(195,129,84,0.35)]"
+            <motion.div
+              variants={fadeUp}
+              className="bg-white/80 backdrop-blur-md rounded-[32px] p-10 shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-[#eadbc8] hover:-translate-y-3 hover:shadow-[0_25px_70px_rgba(0,0,0,0.12)] transition-all duration-500"
             >
-              Explore Real Estate
-            </button>
+
+              <div className="mb-8">
+
+                <span className="text-sm uppercase tracking-[4px] text-[#C38154] font-semibold">
+                  Workforce Division
+                </span>
+
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-[#222831] mb-6 leading-tight">
+
+                Workforce & Facility Services
+
+              </h2>
+
+              <p className="text-gray-700 text-lg leading-relaxed mb-10">
+
+                Professional manpower deployment and facility management services
+                including security personnel, housekeeping staff, maintenance support,
+                operational workforce solutions, and infrastructure assistance tailored
+                for modern organizations and communities.
+
+              </p>
+
+              <button
+                onClick={() => navigate("/services/workforce")}
+                className="bg-[#C38154] hover:bg-[#d19167] text-white px-7 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-[0_12px_35px_rgba(195,129,84,0.35)] hover:-translate-y-1"
+              >
+                Explore Workforce Services
+              </button>
+
+            </motion.div>
+
+            {/* REAL ESTATE CARD */}
+
+            <motion.div
+              variants={fadeUp}
+              className="bg-white/80 backdrop-blur-md rounded-[32px] p-10 shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-[#eadbc8] hover:-translate-y-3 hover:shadow-[0_25px_70px_rgba(0,0,0,0.12)] transition-all duration-500"
+            >
+
+              <div className="mb-8">
+
+                <span className="text-sm uppercase tracking-[4px] text-[#C38154] font-semibold">
+                  Real Estate Division
+                </span>
+
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-[#222831] mb-6 leading-tight">
+
+                Real Estate Services
+
+              </h2>
+
+              <p className="text-gray-700 text-lg leading-relaxed mb-10">
+
+                Reliable property support and real estate solutions including
+                consultation, operational assistance, infrastructure coordination,
+                property-related services, and long-term support for residential
+                and commercial projects.
+
+              </p>
+
+              <button
+                onClick={() => navigate("/services/realestate")}
+                className="bg-[#C38154] hover:bg-[#d19167] text-white px-7 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-[0_12px_35px_rgba(195,129,84,0.35)] hover:-translate-y-1"
+              >
+                Explore Real Estate
+              </button>
+
+            </motion.div>
 
           </div>
 
-        </div>
+        </motion.section>
 
-      </section>
+      </Reveal>
 
     </div>
   );

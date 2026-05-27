@@ -1,3 +1,7 @@
+import { motion } from "framer-motion";
+import { fadeUp, staggerContainer } from "../utils/animations";
+import Reveal from "../components/Reveal";
+
 import owner from "../assets/owner.jpg";
 import ceo from "../assets/ceo.jpg";
 import cto from "../assets/cto.jpg";
@@ -12,14 +16,23 @@ import client6 from "../assets/client6.png";
 export default function About() {
   return (
     <div className="bg-[#f5efe6] text-[#222831] min-h-screen">
+      <div className="fixed inset-0 pointer-events-none opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/noise.png')]"></div>
 
       {/* HERO */}
 
-      <section className="relative py-28 px-6 text-center overflow-hidden">
+      <section className="relative py-32 px-6 text-center overflow-hidden bg-gradient-to-b from-[#f8f5f0] to-[#efe4d7]">
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#FFC26F]/10 blur-[120px] rounded-full"></div>
 
-        <div className="max-w-5xl mx-auto">
+<div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#C38154]/10 blur-[120px] rounded-full"></div>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-[#222831] mb-8">
+        <motion.div
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="max-w-5xl mx-auto relative z-10"
+>
+
+          <h1 className="text-5xl md:text-7xl font-bold text-[#222831] mb-8 leading-tight">
             About Us
           </h1>
 
@@ -28,17 +41,18 @@ export default function About() {
             solutions with professionalism, reliability, and excellence.
           </p>
 
-        </div>
+        </motion.div>
 
       </section>
 
       {/* ABOUT SECTION */}
 
-      <section className="py-14 px-6">
+      <Reveal>
+<section className="py-20 px-6">
 
         <div className="max-w-6xl mx-auto">
 
-          <div className="bg-[#DCD7C9] rounded-2xl p-8 md:p-12 shadow-2xl border border-[#C38154]">
+          <div className="bg-white/70 backdrop-blur-md rounded-[32px] p-8 md:p-14 shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-[#eadbc8] hover:-translate-y-1 transition duration-500">
 
             <h2 className="text-3xl font-bold text-[#222831] mb-6">
               Who We Are
@@ -85,9 +99,9 @@ export default function About() {
         </div>
 
       </section>
-
+      </Reveal>
       {/* CLIENTS SECTION */}
-
+    <Reveal>
 <section className="py-24 px-6 bg-[#f8f5f0] overflow-hidden">
 
   <div className="max-w-6xl mx-auto text-center">
@@ -133,13 +147,13 @@ export default function About() {
 
         <div
           key={index}
-          className="bg-white rounded-2xl px-10 py-6 shadow-lg hover:scale-105 transition duration-300"
+          className="bg-white rounded-3xl px-10 py-6 shadow-xl hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(0,0,0,0.12)] transition duration-500"
         >
 
           <img
             src={logo}
             alt="Client Logo"
-            className="h-40 object-contain grayscale hover:grayscale-0 transition duration-500"
+            className="h-40 object-contain grayscale hover:grayscale-0 hover:scale-105 transition duration-700"
           />
 
         </div>
@@ -151,11 +165,18 @@ export default function About() {
   </div>
 
 </section>
+</Reveal>
 
 
       {/* TEAM SECTION */}
 
-      <section className="py-32 px-10">
+      <motion.section
+  variants={staggerContainer}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, amount: 0.1 }}
+  className="py-32 px-6 md:px-10"
+>
 
         <div className="max-w-14xl mx-auto">
 
@@ -167,12 +188,12 @@ export default function About() {
 
             {/* OWNER */}
 
-            <div className="bg-white rounded-2xl overflow-hidden shadow-2xl border border-[#DCD7C9] flex flex-col md:flex-row items-center hover:scale-[1.01] transition duration-300">
+            <div className="bg-white rounded-[32px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-[#eadbc8] flex flex-col md:flex-row items-center hover:-translate-y-2 hover:shadow-[0_25px_70px_rgba(0,0,0,0.12)] transition duration-500">
 
               <img
                 src={owner}
                 alt="Owner"
-                className="w-full md:w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 transition duration-500"
+                className="w-full md:w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 hover:scale-105 transition duration-700"
               />
 
               <div className="p-8 flex-1">
@@ -201,7 +222,7 @@ export default function About() {
               <img
                 src={cto}
                 alt="CTO"
-                className="w-full md:w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 transition duration-500"
+                className="w-full md:w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 hover:scale-105 transition duration-700"
               />
 
               <div className="p-8 flex-1">
@@ -229,7 +250,7 @@ export default function About() {
               <img
                 src={cfo}
                 alt="Cso"
-                className="w-full md:w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 transition duration-500"
+                className="w-full md:w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 hover:scale-105 transition duration-700"
               />
 
               <div className="p-8 flex-1">
@@ -257,7 +278,7 @@ export default function About() {
         <img
             src={ceo}
             alt="CEO"
-            className="w-full md:w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 transition duration-500"
+            className="w-full md:w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 hover:scale-105 transition duration-700"
           />
 
           <div className="p-8 flex-1">
@@ -282,7 +303,7 @@ export default function About() {
 
         </div>
 
-      </section>
+      </motion.section>
 
     </div>
   );
