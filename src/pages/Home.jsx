@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "../utils/animations";
 import Reveal from "../components/Reveal";
+import { Helmet } from "react-helmet-async";
 
 import hero1 from "../assets/hero1.jpg";
 import hero2 from "../assets/hero2.jpg";
@@ -82,6 +83,24 @@ export default function Home() {
   }, [charIndex, isDeleting, taglineIndex]);
 
   return (
+<>
+  <Helmet>
+    <title>
+      Samarth Vision India | Workforce & Property Leasing Solutions
+    </title>
+
+    <meta
+      name="description"
+      content="Samarth Vision India provides workforce solutions, warehouse leasing, agricultural land leasing, facility management, and infrastructure support services."
+    />
+
+    <meta
+      name="keywords"
+      content="manpower services, warehouse leasing, agricultural land leasing, facility management, Gurgaon"
+    />
+  </Helmet>
+
+  <div></div>
 
     <div className="bg-[#f8f4ee] relative overflow-hidden">
 
@@ -225,11 +244,61 @@ export default function Home() {
 
       </Reveal>
 
+        {/* CERTIFICATIONS */}
+
+<Reveal>
+
+  <section className="py-14 px-6 bg-[#f5efe6] border-y border-[#eadbc8]">
+
+    <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
+
+      {/* RERA */}
+
+      <div className="bg-white rounded-3xl p-8 border border-[#eadbc8] shadow-lg">
+
+        <p className="uppercase tracking-[4px] text-[#C38154] text-sm mb-3">
+          Approved Authority
+        </p>
+
+        <h3 className="text-3xl font-bold text-[#222831] mb-4">
+          RERA Approved
+        </h3>
+
+        <p className="text-gray-700 leading-relaxed">
+          Our leasing and real estate operations follow professional standards aligned with the Real Estate Regulatory Authority.
+        </p>
+
+      </div>
+
+      {/* PASARA */}
+
+      <div className="bg-[#222831] rounded-3xl p-8 border border-white/10">
+
+        <p className="uppercase tracking-[4px] text-[#FFC26F] text-sm mb-3">
+          Upcoming Compliance
+        </p>
+
+        <h3 className="text-3xl font-bold text-[#F9E0BB] mb-4">
+          PASARA License
+        </h3>
+
+        <p className="text-gray-300 leading-relaxed">
+          Licensing and certification details will be added here soon.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</Reveal>
+
       {/* WHO WE ARE SECTION */}
 
       <Reveal className="py-24 px-6 bg-[#f8f5f0]">
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
 
           {/* LEFT */}
 
@@ -241,7 +310,7 @@ export default function Home() {
 
             </span>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-[#222831] mt-4 mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#222831] mt-4 mb-8 leading-tight">
 
               Building Trust Through Professional Services
 
@@ -323,7 +392,7 @@ export default function Home() {
             Our Expertise
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#222831] mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#222831] mb-16">
 
             Our Services
 
@@ -331,7 +400,7 @@ export default function Home() {
 
           {/* CARDS */}
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
             {/* WORKFORCE */}
 
@@ -390,5 +459,6 @@ export default function Home() {
       </motion.section>
 
     </div>
+    </>
   );
 }

@@ -2,14 +2,32 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "../utils/animations";
 import Reveal from "../components/Reveal";
+import { Helmet } from "react-helmet-async";
 
 export default function Services() {
 
   const navigate = useNavigate();
 
   return (
+    <>
+  <Helmet>
+    <title>
+  Services | Samarth Vision India
+</title>
 
-    <div className="bg-[#f5f5f5] min-h-screen relative overflow-hidden">
+    <meta
+      name="description"
+      content="Samarth Vision India provides workforce solutions, warehouse leasing, agricultural land leasing, facility management, and infrastructure support services."
+    />
+
+    <meta
+      name="keywords"
+      content="manpower services, warehouse leasing, agricultural land leasing, facility management, Gurgaon"
+    />
+  </Helmet>
+
+  <div></div>
+    <div className="bg-[#f5f5f5] min-h-[85vh] md:min-h-[85vh] md:min-h-[85vh] md:min-h-screen relative overflow-hidden">
 
       {/* NOISE TEXTURE */}
 
@@ -17,7 +35,7 @@ export default function Services() {
 
       {/* HERO SECTION */}
 
-      <section className="relative overflow-hidden bg-[#222831] text-white py-32 px-6 text-center">
+      <section className="relative overflow-hidden bg-[#222831] text-white py-20 py-20 md:py-32 px-6 text-center">
 
         {/* GLOW EFFECTS */}
 
@@ -34,7 +52,7 @@ export default function Services() {
           className="max-w-5xl mx-auto relative z-10"
         >
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 text-[#F9E0BB] leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-8 text-[#F9E0BB] leading-tight">
 
             Our Services
 
@@ -77,7 +95,7 @@ export default function Services() {
               Professional Solutions
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-[#222831] mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#222831] mb-6">
               Services Designed For Modern Operations
             </h2>
 
@@ -91,7 +109,7 @@ export default function Services() {
 
           {/* SERVICE CARDS */}
 
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 relative z-10">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 relative z-10">
 
             {/* WORKFORCE CARD */}
 
@@ -178,5 +196,6 @@ export default function Services() {
       </Reveal>
 
     </div>
+    </>
   );
 }

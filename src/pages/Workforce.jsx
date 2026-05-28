@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 import Reveal from "../components/Reveal";
 import { fadeUp, staggerContainer } from "../utils/animations";
@@ -28,7 +29,7 @@ export default function Workforce() {
 
             {/* HERO SECTION */}
 
-            <section className="relative min-h-screen bg-[#222831] text-white px-6 py-24 flex items-center overflow-hidden">
+            <section className="relative min-h-[85vh] md:min-h-screen bg-[#222831] text-white px-6 py-24 flex items-center overflow-hidden">
 
                 {/* GOLD GLOW */}
 
@@ -36,7 +37,7 @@ export default function Workforce() {
 
                 <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#C38154]/10 blur-[120px] rounded-full"></div>
 
-                <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+                <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 md:gap-16 items-center relative z-10">
 
                     {/* LEFT SIDE */}
 
@@ -50,7 +51,7 @@ export default function Workforce() {
                             Workforce Solutions
                         </p>
 
-                        <h1 className="text-5xl md:text-7xl font-bold leading-tight text-[#F9E0BB] mb-8">
+                        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight text-[#F9E0BB] mb-8">
 
                             Professional Workforce &
                             Infrastructure Solutions
@@ -65,7 +66,7 @@ export default function Workforce() {
 
                         </p>
 
-                        <div className="flex gap-5 flex-wrap">
+                        <div className="flex flex-col sm:flex-row gap-5">
 
                             <button
                                 onClick={() => navigate("/contact")}
@@ -87,7 +88,7 @@ export default function Workforce() {
 
                     {/* RIGHT SIDE */}
 
-                    <div className="relative flex justify-center items-center min-h-[500px]">
+                    <div className="relative hidden lg:flex justify-center items-center min-h-[500px]">
 
                         {/* CARD 1 */}
 
@@ -183,7 +184,7 @@ export default function Workforce() {
                                 Manpower Services
                             </p>
 
-                            <h2 className="text-4xl md:text-5xl font-bold text-[#222831] mb-6">
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#222831] mb-6">
                                 Professional Workforce Solutions
                             </h2>
 
@@ -195,7 +196,7 @@ export default function Workforce() {
 
                         </div>
 
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
 
                             {[
                                 {
@@ -282,7 +283,7 @@ export default function Workforce() {
                                 Infrastructure Management
                             </p>
 
-                            <h2 className="text-4xl md:text-5xl font-bold text-[#F9E0BB] mb-6">
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#F9E0BB] mb-6">
                                 Smart Infrastructure Services
                             </h2>
 
@@ -293,7 +294,7 @@ export default function Workforce() {
 
                         </div>
 
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
 
                             {[
                                 {
@@ -365,7 +366,7 @@ export default function Workforce() {
                     className="py-24 px-6 bg-[#f8f4ee]"
                 >
 
-                    <div className="max-w-5xl mx-auto bg-[#222831] rounded-[40px] p-12 md:p-16 text-center relative overflow-hidden shadow-2xl">
+                    <div className="max-w-5xl mx-auto bg-[#222831] rounded-[40px] p-8 md:p-16 text-center relative overflow-hidden shadow-2xl">
 
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,194,111,0.12),transparent_45%)]"></div>
 
@@ -375,7 +376,7 @@ export default function Workforce() {
                                 Workforce Support
                             </p>
 
-                            <h2 className="text-4xl md:text-5xl font-bold text-[#F9E0BB] leading-tight mb-6">
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#F9E0BB] leading-tight mb-6">
 
                                 Looking For Reliable Workforce Solutions?
 

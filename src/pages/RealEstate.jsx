@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 import {
   Warehouse,
@@ -40,16 +41,16 @@ export default function RealEstate() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto px-6 py-32 relative z-10"
+          className="max-w-7xl mx-auto px-6 py-20 py-20 md:py-32 relative z-10"
         >
 
           <div className="max-w-4xl">
 
-            <p className="uppercase tracking-[6px] text-[#FFC26F] text-sm mb-5">
+            <p className="uppercase tracking-[3px] md:tracking-[6px] text-[#FFC26F] text-sm mb-5">
               Real Estate & Leasing
             </p>
 
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight text-[#F9E0BB] mb-8">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight text-[#F9E0BB] mb-8">
 
               Warehouse & Agricultural Land Leasing Solutions
 
@@ -100,9 +101,9 @@ export default function RealEstate() {
 
           <div className="max-w-6xl mx-auto">
 
-            <div className="bg-white/80 backdrop-blur-md rounded-3xl p-10 md:p-14 shadow-xl border border-[#eadbc8] transition-all duration-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.10)]">
+            <div className="bg-white/80 backdrop-blur-md rounded-3xl p-6 md:p-14 shadow-xl border border-[#eadbc8] transition-all duration-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.10)]">
 
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-[#222831] leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-[#222831] leading-tight">
 
                 Reliable Property Solutions Built For Business Growth
 
@@ -158,7 +159,7 @@ export default function RealEstate() {
                 Real Estate Solutions
               </p>
 
-              <h2 className="text-4xl md:text-5xl font-bold text-[#222831]">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#222831]">
 
                 Our Real Estate Services
 
@@ -166,7 +167,7 @@ export default function RealEstate() {
 
             </div>
 
-            <div className="grid md:grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
               {/* WAREHOUSE */}
 
@@ -262,7 +263,7 @@ export default function RealEstate() {
 
               <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-[#FFC26F]/10 blur-[120px] rounded-full"></div>
 
-              <div className="relative z-10 grid md:grid-cols-2 gap-14 items-center">
+              <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
 
                 {/* LEFT */}
 
@@ -272,7 +273,7 @@ export default function RealEstate() {
                     Let’s Connect
                   </p>
 
-                  <h2 className="text-4xl md:text-5xl font-bold leading-tight text-[#F9E0BB] mb-6">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-[#F9E0BB] mb-6">
 
                     Looking For Property Leasing Solutions?
 

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "../utils/animations";
 import Reveal from "../components/Reveal";
+import { Helmet } from "react-helmet-async";
 
 import owner from "../assets/owner.jpg";
 import ceo from "../assets/ceo.jpg";
@@ -10,17 +11,34 @@ import client1 from "../assets/client1.png";
 import client2 from "../assets/client2.png";
 import client3 from "../assets/client3.png";
 import client4 from "../assets/client4.png";
-import client5 from "../assets/client5.png";
-import client6 from "../assets/client6.png";
+
 
 export default function About() {
   return (
-    <div className="bg-[#f5efe6] text-[#222831] min-h-screen">
+    <>
+  <Helmet>
+    <title>
+  About Us | Samarth Vision India
+</title>
+
+    <meta
+      name="description"
+      content="Samarth Vision India provides workforce solutions, warehouse leasing, agricultural land leasing, facility management, and infrastructure support services."
+    />
+
+    <meta
+      name="keywords"
+      content="manpower services, warehouse leasing, agricultural land leasing, facility management, Gurgaon"
+    />
+  </Helmet>
+
+  <div></div>
+    <div className="bg-[#f5efe6] text-[#222831] min-h-[85vh] md:min-h-screen">
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/noise.png')]"></div>
 
       {/* HERO */}
 
-      <section className="relative py-32 px-6 text-center overflow-hidden bg-gradient-to-b from-[#f8f5f0] to-[#efe4d7]">
+      <section className="relative py-20 md:py-20 md:py-32 px-6 text-center overflow-hidden bg-gradient-to-b from-[#f8f5f0] to-[#efe4d7]">
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#FFC26F]/10 blur-[120px] rounded-full"></div>
 
 <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#C38154]/10 blur-[120px] rounded-full"></div>
@@ -32,7 +50,7 @@ export default function About() {
   className="max-w-5xl mx-auto relative z-10"
 >
 
-          <h1 className="text-5xl md:text-7xl font-bold text-[#222831] mb-8 leading-tight">
+          <h1 className="text-4xl sm:text-4xl sm:text-5xl lg:text-7xl font-bold text-[#222831] mb-8 leading-tight">
             About Us
           </h1>
 
@@ -100,6 +118,67 @@ export default function About() {
 
       </section>
       </Reveal>
+
+    {/* CERTIFICATIONS */}
+
+<Reveal>
+
+<section className="pb-20 px-6">
+
+  <div className="max-w-6xl mx-auto">
+
+    <div className="bg-[#222831] rounded-[36px] p-10 md:p-14 relative overflow-hidden">
+
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,194,111,0.12),transparent_40%)]"></div>
+
+      <div className="relative z-10 grid md:grid-cols-2 gap-8">
+
+        {/* RERA */}
+
+        <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md">
+
+          <p className="uppercase tracking-[4px] text-[#FFC26F] text-sm mb-3">
+            Approved Authority
+          </p>
+
+          <h3 className="text-3xl font-bold text-[#F9E0BB] mb-4">
+            RERA Approved
+          </h3>
+
+          <p className="text-gray-300 leading-relaxed">
+            Samarth Vision India maintains transparency and operational standards aligned with RERA guidelines.
+          </p>
+
+        </div>
+
+        {/* PASARA */}
+
+        <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md">
+
+          <p className="uppercase tracking-[4px] text-[#FFC26F] text-sm mb-3">
+            Upcoming Compliance
+          </p>
+
+          <h3 className="text-3xl font-bold text-[#F9E0BB] mb-4">
+            PASARA License
+          </h3>
+
+          <p className="text-gray-300 leading-relaxed">
+            PASARA certification details and licensing information will be integrated soon.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</Reveal>
+
       {/* CLIENTS SECTION */}
     <Reveal>
 <section className="py-24 px-6 bg-[#f8f5f0] overflow-hidden">
@@ -112,7 +191,7 @@ export default function About() {
 
     </span>
 
-    <h2 className="text-4xl md:text-5xl font-bold text-[#222831] mt-4 mb-8">
+    <h2 className="text-3xl sm:text-3xl sm:text-3xl sm:text-4xl md:text-5xl font-bold text-[#222831] mt-4 mb-8">
 
       Trusted By Growing Organizations
 
@@ -142,8 +221,8 @@ export default function About() {
 
     <div className="flex animate-marquee gap-20 w-max items-center">
 
-      {[client1, client2, client3, client4, client5, client6,
-        client1, client2, client3, client4, client5, client6].map((logo, index) => (
+      {[client1, client2, client3, client4,
+        client1, client2, client3, client4 ].map((logo, index) => (
 
         <div
           key={index}
@@ -153,7 +232,7 @@ export default function About() {
           <img
             src={logo}
             alt="Client Logo"
-            className="h-40 object-contain grayscale hover:grayscale-0 hover:scale-105 transition duration-700"
+            className="h-24 md:h-40 object-contain grayscale hover:grayscale-0 hover:scale-105 transition duration-700"
           />
 
         </div>
@@ -175,12 +254,12 @@ export default function About() {
   initial="hidden"
   whileInView="show"
   viewport={{ once: true, amount: 0.1 }}
-  className="py-32 px-6 md:px-10"
+  className="py-20 py-20 md:py-32 px-6 md:px-10"
 >
 
         <div className="max-w-14xl mx-auto">
 
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-[#222831] mb-14">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-[#222831] mb-14">
             Leadership Team
           </h2>
 
@@ -193,7 +272,7 @@ export default function About() {
               <img
                 src={owner}
                 alt="Owner"
-                className="w-full md:w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 hover:scale-105 transition duration-700"
+                className="w-full md:w-[260px] md:min-w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 hover:scale-105 transition duration-700"
               />
 
               <div className="p-8 flex-1">
@@ -222,7 +301,7 @@ export default function About() {
               <img
                 src={cto}
                 alt="CTO"
-                className="w-full md:w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 hover:scale-105 transition duration-700"
+                className="w-full md:w-[260px] md:min-w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 hover:scale-105 transition duration-700"
               />
 
               <div className="p-8 flex-1">
@@ -250,7 +329,7 @@ export default function About() {
               <img
                 src={cfo}
                 alt="Cso"
-                className="w-full md:w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 hover:scale-105 transition duration-700"
+                className="w-full md:w-[260px] md:min-w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 hover:scale-105 transition duration-700"
               />
 
               <div className="p-8 flex-1">
@@ -278,7 +357,7 @@ export default function About() {
         <img
             src={ceo}
             alt="CEO"
-            className="w-full md:w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 hover:scale-105 transition duration-700"
+            className="w-full md:w-[260px] md:min-w-[260px] h-[260px] object-cover grayscale hover:grayscale-0 hover:scale-105 transition duration-700"
           />
 
           <div className="p-8 flex-1">
@@ -306,5 +385,6 @@ export default function About() {
       </motion.section>
 
     </div>
+    </>
   );
 }
