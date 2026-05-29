@@ -250,7 +250,7 @@ export default function Contact() {
                                 {
                                     icon: Mail,
                                     title: "Email",
-                                    text: "wxy@gmail.com",
+                                    text: "info@svisionindia.com",
                                 },
                                 {
                                     icon: MapPin,

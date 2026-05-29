@@ -7,6 +7,7 @@ import Workforce from "./pages/Workforce"
 import RealEstate from "./pages/RealEstate"
 import Contact from "./pages/Contact"
 import About from "./pages/About";
+import Policy from "./pages/Policy";
 
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
@@ -27,7 +28,10 @@ export default function App() {
         <Route path="/services/realestate" element={<RealEstate />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/privacy-policy" element={<Policy />} />
       </Routes>
+
+
 
       <Footer />
 

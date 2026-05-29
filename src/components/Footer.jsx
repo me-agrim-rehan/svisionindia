@@ -63,6 +63,13 @@ export default function Footer() {
                 Contact
               </Link>
 
+              <Link
+                to="/privacy-policy"
+                className="hover:text-[#FFC26F] transition duration-300"
+              >
+                Privacy Policy
+              </Link>
+
             </div>
 
           </div>

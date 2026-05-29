@@ -48,7 +48,7 @@ useEffect(() => {
   return (
 
     <nav
-  className={`sticky top-0 z-50 backdrop-blur-2xl border-b transition-all duration-500 group
+  className={`sticky top-0 z-50 backdrop-blur-md border-b transition-all duration-500 group
   ${
     scrolled
       ? "bg-[#111315]/55 border-white/5"

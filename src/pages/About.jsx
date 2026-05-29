@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet-async";
 import owner from "../assets/owner.jpg";
 import ceo from "../assets/ceo.jpg";
 import cto from "../assets/cto.jpg";
-import cfo from "../assets/cfo.jpg";
+import cfo from "../assets/cfo.webp";
 import client1 from "../assets/client1.png";
 import client2 from "../assets/client2.png";
 import client3 from "../assets/client3.png";

@@ -112,9 +112,6 @@ export default function Home() {
       <div></div>
 
       <div className="bg-[#f8f4ee] relative overflow-hidden">
-
-        <div className="fixed inset-0 pointer-events-none opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/noise.png')]"></div>
-
         {/* HERO SECTION */}
 
         <section className="relative min-h-[92vh] pb-16 md:pb-0 overflow-hidden">
@@ -127,12 +124,10 @@ export default function Home() {
               key={index}
               initial={{ opacity: 0, scale: 1 }}
               animate={{
-                opacity: index === currentImage ? 1 : 0,
-                scale: index === currentImage ? 1.05 : 1,
-              }}
+  opacity: index === currentImage ? 1 : 0
+}}
               transition={{
-                opacity: { duration: 1.5, ease: "easeInOut" },
-                scale: { duration: 7, ease: "linear" },
+                opacity: { duration: 1.5, ease: "easeInOut" }
               }}
               
               className="absolute inset-0 bg-cover bg-center will-change-transform"
