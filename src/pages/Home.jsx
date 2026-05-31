@@ -107,6 +107,8 @@ export default function Home() {
           name="keywords"
           content="Workforce services, warehouse leasing, agricultural land leasing, facility management, Gurgaon"
         />
+
+      <link rel="canonical" href="https://www.svisionindia.com/home" />
       </Helmet>
 
       <div></div>
